@@ -51,14 +51,6 @@
             color: #333;
             text-align: center;
         }
-        .link-display a {
-            color: #C11B17;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        .link-display a:hover {
-            color: #A31515;
-        }
     </style>
 </head>
 <body>
@@ -74,8 +66,7 @@
 
     <script>
         function showLink(link) {
-            const linkDisplay = document.getElementById('linkDisplay');
-            linkDisplay.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">افتح الرابط في صفحة خارجية</a>`;
+            document.getElementById('linkDisplay').innerText = link;
         }
     </script>
 
