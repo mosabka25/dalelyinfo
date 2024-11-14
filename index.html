@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل ملفات PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7F7F7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #C11B17;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #A31515;
+        }
+
+        .download-btn:active {
+            background-color: #891010;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>تحميل ملفات PDF</h1>
+    <div class="button-container">
+        <!-- استبدل الروابط أدناه برابط الملفات من Google Drive -->
+        <a href="https://raw.githubusercontent.com/mosabka25/mosabaka25/af5d098c1932a0e1e80da200ffabf03b2f3dd749/%D8%AA%D8%AD%D8%B6%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B5%D9%81%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20-%20%D8%AA%D8%B1%D9%85%20%D8%A7%D9%88%D9%84.pdf" class="download-btn" download>تحميل الملف الأول</a>
+        <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2" class="download-btn" download>تحميل الملف الثاني</a>
+        <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3" class="download-btn" download>تحميل الملف الثالث</a>
+    </div>
+
+</body>
+</html>
