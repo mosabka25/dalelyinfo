@@ -1,74 +1,201 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إظهار رابط الملف</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>نسخ رابط الملف - دليلي ميوزيك</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #F7F7F7;
+            background-color: #FDF7E3;
+            user-select: none;
+        }
+
+ .titles h1 {
+            font-family: 'Amiri', serif;
+            color: #004d40;
+            font-size: 2em;
+            margin-bottom: 5px;
+text-align: center;
+        }
+
+        .titles h2 {
+            font-family: 'Amiri', serif;
+            color: #C11B17;
+            font-size: 1.5em;
+text-align: center;
+
+        }
+
+        .titles h3 {
+            font-family: 'Amiri', serif;
+            color: #004d40;
+            font-size: 1.2em;
+text-align: center;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #C11B17;
+            color: white;
+            padding: 10px 20px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .banner {
+            background-image: url('https://raw.githubusercontent.com/mosabka25/mosabaka25/327c4aad7019463731697b529095eebf103b8842/dalelycover.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            align-items: center;
+            margin-top: 50px;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
+
+        .banner h1 {
+            font-family: 'Amiri', serif;
+            color: #00796b;
+            font-size: 4vw;
+            text-align: center;
         }
+
+        .content {
+            padding: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         .button-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
             width: 80%;
             max-width: 400px;
+            margin: 0 auto;
         }
-        .download-btn {
-            display: inline-block;
-            text-align: center;
+
+        .copy-btn {
             padding: 15px;
             font-size: 1.2em;
             color: white;
             background-color: #C11B17;
             border: none;
             border-radius: 8px;
-            text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .download-btn:hover {
+
+        .copy-btn:hover {
             background-color: #A31515;
         }
-        .download-btn:active {
+
+        .copy-btn:active {
             background-color: #891010;
         }
-        .link-display {
+
+        .message-display {
             margin-top: 20px;
             font-size: 1.2em;
             color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            width: 100%;
             text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="https://mosabka25.github.io/mosabaka25/توزيع المنهج.html"><i class="fa-solid fa-book"></i> توزيع المنهج</a>
+            <a href="https://mosabka25.github.io/mosabaka25/vedio_score.html"><i class="fas fa-music"></i> المسابقة</a>
+            <a href="https://mosabka25.github.io/mosabaka25/دليل المعلم.html"><i class="fas fa-person-chalkboard"></i> دليل المعلم</a>
+            <a href="https://mosabka25.github.io/mosabaka25/دفتر%20التحضير.html"><i class="fas fa-book-open"></i> دفتر التحضير</a>
+            <a href="https://mosabka25.github.io/mosabaka25/أغانى تعليمية.html"><i class="fas fa-guitar"></i> أغاني تعليمية</a>
+            <a href="https://mosabka25.github.io/mosabaka25/اتصل%20بنا.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+        </div>
+    </nav>
 
-    <h1>إظهار رابط الملف</h1>
-    <div class="button-container">
-        <button class="download-btn" onclick="showLink('https://raw.githubusercontent.com/mosabka25/mosabaka25/af5d098c1932a0e1e80da200ffabf03b2f3dd749/%D8%AA%D8%AD%D8%B6%D9%8A%D8%B1%20%D8%A7%D9%84%D8%B5%D9%81%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9%20-%20%D8%AA%D8%B1%D9%85%20%D8%A7%D9%88%D9%84.pdf')">إظهار رابط الملف الأول</button>
-        <button class="download-btn" onclick="showLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">إظهار رابط الملف الثاني</button>
-        <button class="download-btn" onclick="showLink('https://drive.google.com/file/d/1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg/view?usp=sharing')">إظهار رابط الملف الثالث</button>
+    <div class="banner">
+        <h1></h1>
     </div>
 
-    <div class="link-display" id="linkDisplay">الرابط سيظهر هنا</div>
+ <div class="titles">
+        <h1>أدوات مُعلم التربية الموسيقية </h1>
+        <h2>مركز تحميل الملفات</h2>
+        <h3>إضغط على الأيقونة لنسخ الرابط</h3>
+    </div>
+
+
+
+    <div class="content">
+        <h2>ليبدأ التحميل قم بلصق الرابط فى المتصفح</h2>
+        <div class="button-container">
+            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الرابع - تيرم اول</button>
+            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1r_pSW6pMgOicnDmZvWAaUeEFACRIq3g0')">تحضير الصف الخامس - تيرم اول</button>
+            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف السادس - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الأول الإعدادي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثاني الإعدادي- تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثالث الإعدادي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الأول الثانوي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثاني الثانوي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثالث الثانوي - تيرم اول</button>
+
+
+        </div>
+        <div class="message-display" id="messageDisplay">سيتم نسخ الرابط هنا</div>
+    </div>
+
+    <footer>
+        <p>دليلي ميوزيك</p>
+    </footer>
 
     <script>
-        function showLink(link) {
-            document.getElementById('linkDisplay').innerText = link;
+        function copyLink(link) {
+            navigator.clipboard.writeText(link).then(() => {
+                document.getElementById('messageDisplay').innerText = "تم نسخ الرابط بنجاح! يمكنك الآن فتحه في المتصفح.";
+            }).catch((error) => {
+                document.getElementById('messageDisplay').innerText = "حدث خطأ أثناء نسخ الرابط: " + error;
+            });
         }
     </script>
-
 </body>
 </html>
