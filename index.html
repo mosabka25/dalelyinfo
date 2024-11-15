@@ -18,8 +18,7 @@
             background-color: #FDF7E3;
             user-select: none;
         }
-
- .titles h1 {
+.titles h1 {
             font-family: 'Amiri', serif;
             color: #004d40;
             font-size: 2em;
@@ -120,12 +119,6 @@ text-align: center;
             background-color: #891010;
         }
 
-        .message-display {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #333;
-        }
-
         footer {
             background-color: #333;
             color: white;
@@ -158,42 +151,46 @@ text-align: center;
         <h1></h1>
     </div>
 
- <div class="titles">
+<div class="titles">
         <h1>أدوات مُعلم التربية الموسيقية </h1>
         <h2>مركز تحميل الملفات</h2>
         <h3>إضغط على الأيقونة لنسخ الرابط</h3>
     </div>
 
-
-
     <div class="content">
-        <h2>ليبدأ التحميل قم بلصق الرابط فى المتصفح</h2>
+        <h2>اختر ملفًا لنسخ رابطه وفتحه في المتصفح</h2>
         <div class="button-container">
-            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الرابع - تيرم اول</button>
-            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1r_pSW6pMgOicnDmZvWAaUeEFACRIq3g0')">تحضير الصف الخامس - تيرم اول</button>
-            <button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف السادس - تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الأول الإعدادي - تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثاني الإعدادي- تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثالث الإعدادي - تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الأول الثانوي - تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثاني الثانوي - تيرم اول</button>
-<button class="copy-btn" onclick="copyLink('https://drive.google.com/uc?export=download&id=1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الثالث الثانوي - تيرم اول</button>
+
+        
+            <button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1kMTq1zOwtLHq7Q9MJxhqPI6Lfe4Oi5Gg')">تحضير الصف الرابع - تيرم اول</button>
+            <button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1S0dwXKQGz3VQqJzOMWN9HdziOj1vOxFs')">تحضير الصف الخامس - تيرم اول</button>
+            <button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1JTxoAus8z3i9qy_vRydJ4PsMcSrl1RY1')">تحضير الصف السادس - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1bEmvdroCaaNvSLOw7ECv_d4i5sam7vvW')">تحضير الصف الأول الإعدادي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1o3VtH8IRZCrFh6rejpo2Nsr2-zcal83s')">تحضير الصف الثاني الإعدادي- تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/152B9M8AlDUDg8y1m4ki_nnksOCGvK1fJ')">تحضير الصف الثالث الإعدادي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1BGT4LfPAioE0hl_rd9G3kizd-MAtzXsR')">تحضير الصف الأول الثانوي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1jwDp5WzPzbVpx2BlXaSGv3T_Ix8NdcjV')">تحضير الصف الثاني الثانوي - تيرم اول</button>
+<button class="copy-btn" onclick="copyLink(this,'https://drive.google.com/file/d/1yxzSycBND4o2nsJBNnEdDaJaR9eUVs8T')">تحضير الصف الثالث الثانوي - تيرم اول</button>
 
 
         </div>
-        <div class="message-display" id="messageDisplay">سيتم نسخ الرابط هنا</div>
-    </div>
+
+
 
     <footer>
         <p>دليلي ميوزيك</p>
     </footer>
 
     <script>
-        function copyLink(link) {
+        function copyLink(button, link) {
             navigator.clipboard.writeText(link).then(() => {
-                document.getElementById('messageDisplay').innerText = "تم نسخ الرابط بنجاح! يمكنك الآن فتحه في المتصفح.";
+                const originalText = button.innerHTML;
+                button.innerHTML = "تم نسخ الرابط!";
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 5000);
             }).catch((error) => {
-                document.getElementById('messageDisplay').innerText = "حدث خطأ أثناء نسخ الرابط: " + error;
+                alert("حدث خطأ أثناء نسخ الرابط: " + error);
             });
         }
     </script>
