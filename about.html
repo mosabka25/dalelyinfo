@@ -7,21 +7,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* Reset and box-sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        /* Set html and body to use full height and flex layout */
+        html, body {
+            height: 100%;
             font-family: Arial, sans-serif;
             background-color: #FDF7E3;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Navbar styling */
         .navbar {
             position: fixed;
             top: 0;
@@ -49,9 +55,10 @@
         .navbar-links a {
             color: white;
             text-decoration: none;
-            font-size: 0.9em;
+            font-size: 1rem;
         }
 
+        /* Banner styling */
         .banner {
             background-image: url('https://raw.githubusercontent.com/mosabka25/mosabaka25/327c4aad7019463731697b529095eebf103b8842/dalelycover.png');
             background-size: cover;
@@ -60,126 +67,199 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 60px; /* Adjusted to account for navbar height */
         }
 
         .banner h1 {
             font-family: 'Amiri', serif;
             color: #00796b;
-            font-size: 4vw;
+            font-size: 6vw;
             text-align: center;
+            max-width: 90%;
         }
 
-        
-
-        .content {
+        /* Titles section */
+        .titles {
             text-align: center;
-            padding: 50px;
-            max-width: 800px;
-            margin: auto;
-            background-color: #4a0b0a;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 1800px; /* زيادة طول المحتوى */
-        }
-
- .titles {
-            text-align: center;
-            margin: 10px 0;
+            margin: 20px 10px;
         }
 
         .titles h1 {
             font-family: 'Amiri', serif;
             color: #004d40;
-            font-size: 2em;
-            margin-bottom: 5px;
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+            margin-bottom: 10px;
         }
 
         .titles h2 {
             font-family: 'Amiri', serif;
             color: #C11B17;
-            font-size: 1.5em;
+            font-size: clamp(1.2rem, 2vw, 2rem);
         }
 
-        /* تكبير حجم الخط */
+        /* Content styling */
+        .content {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #4a0b0a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 0 auto;
+        }
+
         .content h2 {
-            font-size: 2.5em; /* تكبير حجم العناوين */
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+            color: #fafaf7;
+            animation: moveText 12s ease-out forwards;
+            margin: 20px 0 10px 0;
         }
 
         .content p {
-            font-size: 1.6em; /* تكبير حجم الفقرات */
+            font-size: clamp(1rem, 1.6vw, 1.6rem);
+            color: #f4fa48;
+            animation: moveText 12s ease-out forwards;
+            margin: 10px 0;
+            line-height: 1.6;
         }
 
         .content h3 {
-            font-size: 1.8em; /* تكبير حجم عناوين المدير */
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            color: #fafaf7;
+            animation: moveText 12s ease-out forwards;
+            margin: 15px 0 5px 0;
         }
 
-         .content p, .content h3, .content img {
-            color: #f4fa48;
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
             animation: moveText 12s ease-out forwards;
         }
 
-.content h2, .content h3, .manager-section h3 {
-          color: #fafaf7;
-            animation: moveText 12s ease-out forwards;
-        }
-
-
-.manager-section h5 {
-          color: #f4fa48;
-            animation: moveText 12s ease-out forwards;
-font-size: 1.4em;
-        }
-.manager-section h6 {
-          color: #e1fce8;
-            animation: moveText 12s ease-out forwards;
-font-size: 1.8em;
-        }
-
-
-        /* حركة النصوص والصورة */
-        @keyframes moveText {
-            0% {
-                transform: translateY(100%); /* يبدأ من أسفل المحتوى */
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(0); /* يستقر في مكانه داخل المحتوى */
-                opacity: 1;
-            }
-        }
-
+        /* Manager section styling */
         .manager-section {
             margin-top: 20px;
         }
 
         .manager-section h3 {
             color: #f9fad9;
-            font-size: 1.9em;
+            font-size: clamp(1.4rem, 1.9vw, 1.9rem);
             margin-bottom: 10px;
-            animation: moveText 12s ease-out forwards; /* إضافة الحركة للنصوص في القسم */
+            animation: moveText 12s ease-out forwards;
         }
 
-        .manager-section img {
-            width: 190px;
-            height: 190px;
-            border-radius: 70%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-            animation: moveText 12s ease-out forwards; /* حركة الصورة أيضًا */
+        .manager-section h5 {
+            color: #f4fa48;
+            font-size: clamp(1rem, 1.4vw, 1.4rem);
+            animation: moveText 12s ease-out forwards;
+            margin: 5px 0;
         }
 
+        .manager-section h6 {
+            color: #e1fce8;
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            animation: moveText 12s ease-out forwards;
+            margin: 5px 0;
+        }
+
+        /* Footer styling */
         footer {
             text-align: center;
             background-color: #C11B17;
             color: white;
-            padding: 20px 0;
-            margin-top: 30px;
+            padding: 15px 0;
+            flex-shrink: 0;
+            width: 100%;
         }
 
+        /* Animation for moving text */
+        @keyframes moveText {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .banner h1 {
+                font-size: 8vw;
+            }
+
+            .titles h1 {
+                font-size: clamp(1.2rem, 3vw, 2rem);
+            }
+
+            .titles h2 {
+                font-size: clamp(1rem, 2.5vw, 1.8rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 8px 15px;
+            }
+
+            .navbar-links a {
+                font-size: 0.9rem;
+            }
+
+            .banner h1 {
+                font-size: 10vw;
+            }
+
+            .titles h1 {
+                font-size: clamp(1rem, 4vw, 1.8rem);
+            }
+
+            .titles h2 {
+                font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .content h2 {
+                font-size: clamp(1.2rem, 3vw, 2rem);
+            }
+
+            .content p {
+                font-size: clamp(0.9rem, 1.4vw, 1.4rem);
+            }
+
+            .content h3 {
+                font-size: clamp(1rem, 2vw, 1.6rem);
+            }
+
+            .manager-section h3 {
+                font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            }
+
+            .manager-section h5 {
+                font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+            }
+
+            .manager-section h6 {
+                font-size: clamp(1rem, 2vw, 1.6rem);
+            }
+        }
     </style>
 </head>
 <body>
@@ -217,70 +297,62 @@ font-size: 1.8em;
 
 <nav class="navbar">
     <div class="navbar-links">
-        
-       <a href="https://mosabka25.github.io/dalelyinfo/index.html">⏬</i> تحميل التطبيق</a>
-<a href="https://mosabka25.github.io/dalelyinfo/about.html">ℹ</i> عن التطبيق</a>
-<a href="https://mosabka25.github.io/dalelyinfo/Loder.html">📚</i> المكتبة</a>
-        <a href="https://mosabka25.github.io/dalelyinfo/call.html">📬</i> اتصل بنا</a>
-
+        <a href="https://mosabka25.github.io/dalelyinfo/index.html">⏬ تحميل التطبيق</a>
+        <a href="https://mosabka25.github.io/dalelyinfo/about.html">ℹ عن التطبيق</a>
+        <a href="https://mosabka25.github.io/dalelyinfo/Loder.html">📚 المكتبة</a>
+        <a href="https://mosabka25.github.io/dalelyinfo/call.html">📬 اتصل بنا</a>
     </div>
 </nav>
 
 <div class="banner">
-        <h1> </h1>
-    
+    <h1> </h1>
 </div>
 
 <div class="titles">
-        <h1>مرحبًا بكم في " دليلي ميوزيك " </h1>
-        <h2> أدوات معلم التربية الموسيقية </h2>
-        
-    </div>
-
+    <h1>مرحبًا بكم في "دليلي ميوزيك"</h1>
+    <h2>أدوات معلم التربية الموسيقية</h2>
+</div>
 
 <div class="content" id="about">
-    <h2>" دليلـي ميـوزيـك "</h2>
+    <h2>"دليلـي ميـوزيـك"</h2>
     <h2>*****</h2>
     <p>
-        "دليلي ميوزيك" 
- هو التطبيق التعليمي الرائد الذي انبثق من رؤية مبتكرة تهدف إلى الإستفادة من تكنولوجيا برمجة وتطوير التطبيقات في إنشاء تطبيق تعليمىي مخصص لتنظيم موارد نشاط و مادة التربية الموسيقية بــ </p>
-
-
+        "دليلي ميوزيك" هو التطبيق التعليمي الرائد الذي انبثق من رؤية مبتكرة تهدف إلى الإستفادة من تكنولوجيا برمجة وتطوير التطبيقات في إنشاء تطبيق تعليمي مخصص لتنظيم موارد نشاط ومادة التربية الموسيقية بــ
+    </p>
 
     <h2>توجيه التربية الموسيقية</h2>
     <h2>إدارة شبـــــــرا التــــعليـميـــــة</h2>
 
-    <p>صُمم التطبيق ليُسهم في  تعزيزتوفير موارد المحتوى التعليمي للزملاء الأعزاء من معلمي المادة، إذ يتيح لهم الوصول إلى أدلة المعلم لعدة صفوف، خطط توزيع المناهج، دفاتر التحضير، فيديوهات المسابقات، الأغاني التعليمية، وشرح الدروس وغيرها من المواد بطريقة مبتكرة وسهلة.</p>
+    <p>
+        صُمم التطبيق ليُسهم في تعزيز توفير موارد المحتوى التعليمي للزملاء الأعزاء من معلمي المادة، إذ يتيح لهم الوصول إلى أدلة المعلم لعدة صفوف، خطط توزيع المناهج، دفاتر التحضير، فيديوهات المسابقات، الأغاني التعليمية، وشرح الدروس وغيرها من المواد بطريقة مبتكرة وسهلة.
+    </p>
 
-<p>يتميز هذا التطبيق بكونه وسيلة تعليمية فعّالة لدمج جميع هذه الموارد في مكان واحد، مما يوفر الكثير من الوقت والجهد على المعلمين في البحث والاختيار. ومن خلال هذه الأداة الرائعة، يُمكن لمعلمي التربية الموسيقية الاستفادة المثلى من كل محتوى تعليمي            متاح، مع تحقيق التكامل بين جميع جوانب المادة وأنشطتها.</p>
+    <p>
+        يتميز هذا التطبيق بكونه وسيلة تعليمية فعّالة لدمج جميع هذه الموارد في مكان واحد، مما يوفر الكثير من الوقت والجهد على المعلمين في البحث والاختيار. ومن خلال هذه الأداة الرائعة، يُمكن لمعلمي التربية الموسيقية الاستفادة المثلى من كل محتوى تعليمي متاح، مع تحقيق التكامل بين جميع جوانب المادة وأنشطتها.
+    </p>
 
-<p>                             </p>
-
-<p> وبالتالي، 
- يسهم التطبيق في تمكين المعلمين من تقديم دروسهم بشكل احترافي، ويُعزز من مهاراتهم في نقل المعرفة للمجتمع التعليمي بكفاءة عالية. </p>
-
+    <p>
+        وبالتالي، يسهم التطبيق في تمكين المعلمين من تقديم دروسهم بشكل احترافي، ويُعزز من مهاراتهم في نقل المعرفة للمجتمع التعليمي بكفاءة عالية.
+    </p>
 
     <div class="manager-section">
         <h3>تم إنجاز التطبيق بحمد الله تحت رعاية ودعم الأستاذ الفاضل</h3> 
         <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/c9a4a8281210d58a6d7ba535165e256a901c971f/Dr_farahat.jpg" alt="مدير إدارة شبرا التعليمية">
 
-<div class="manager-section">
-        <h3>د. فرحــات عبد الغني</h3>
-        <h2>مــديـر إدارة شبـــرا التعليميــــة</h2>
-<h3>*****</h3>
+        <div class="manager-section">
+            <h3>د. فرحــات عبد الغني</h3>
+            <h2>مــديـر إدارة شبـــرا التعليميــــة</h2>
+            <h3>*****</h3>
 
-<h5>مع تحيات</h5>
-<h5>مُصمم و مُنشيء تطبيـق</h5>
-<h2>"دليلـي ميوزيـك"</h2>
-<h6>هاني سمير سلامة</h6>
-<h5>موجه التربية الموسيقية</h5>
-<h5>بإدارة</h5>
-<h5>شبــرا التـعليميــة</h5>
-
-
-
+            <h5>مع تحيات</h5>
+            <h5>مُصمم و مُنشيء تطبيـق</h5>
+            <h2>"دليلـي ميوزيـك"</h2>
+            <h6>هاني سمير سلامة</h6>
+            <h5>موجه التربية الموسيقية</h5>
+            <h5>بإدارة</h5>
+            <h5>شبــرا التـعليميــة</h5>
+        </div>
     </div>
-</div>
 </div>
 
 <footer>
