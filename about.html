@@ -14,11 +14,12 @@
         }
 
         body {
-            font-family: 'Amiri', serif;
+            font-family: Arial, sans-serif;
             background-color: #FDF7E3;
-            color: #781f1d;
-            padding-top: 70px;
-            font-size: 1rem; /* تحديد الحجم الأساسي للخط */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .navbar {
@@ -35,44 +36,41 @@
             z-index: 1000;
         }
 
+        .navbar-brand {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 15px;
+        }
+
         .navbar-links a {
             color: white;
             text-decoration: none;
-            margin-right: 15px;
-            font-size: 1.2em;
+            font-size: 0.9em;
         }
 
-        .image-slider {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .slider-images {
+        .banner {
+            background-image: url('https://raw.githubusercontent.com/mosabka25/mosabaka25/327c4aad7019463731697b529095eebf103b8842/dalelycover.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
             display: flex;
-            animation: slide 0s infinite;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
         }
 
-
-
-
-
-        .slider-images img {
-            width: 100%;
+        .banner h1 {
+            font-family: 'Amiri', serif;
+            color: #00796b;
+            font-size: 4vw;
+            text-align: center;
         }
 
-
-
-
-        @keyframes slide {
-            0%, 20% { transform: translateX(0); }
-            25%, 45% { transform: translateX(-100%); }
-            50%, 70% { transform: translateX(-200%); }
-            75%, 100% { transform: translateX(0); }
-        }
+        
 
         .content {
             text-align: center;
@@ -83,6 +81,24 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             height: 1800px; /* زيادة طول المحتوى */
+        }
+
+ .titles {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .titles h1 {
+            font-family: 'Amiri', serif;
+            color: #004d40;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .titles h2 {
+            font-family: 'Amiri', serif;
+            color: #C11B17;
+            font-size: 1.5em;
         }
 
         /* تكبير حجم الخط */
@@ -210,16 +226,17 @@ font-size: 1.8em;
     </div>
 </nav>
 
-<div class="image-slider">
-    <div class="slider-images">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AA%D9%88%D8%B2%D9%8A%D8%B9%20%D8%A7%D9%84%D9%85%D9%86%D9%87%D8%AC%20%D8%AC%D8%AF%D9%8A%D8%AF.png" alt="صورة 4">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D9%873.png" alt="صورة 1">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%85%2055.png" alt="صورة 2">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/0f240522221f1768c85e914abf3aaf0db756d0cb/dalelycover2.png" alt="صورة 3">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AF%D9%81%D8%AA%D8%B1%20%D8%A7%D9%84%D8%AA%D8%AC%D8%B6%D9%8A%D8%B155.jpg" alt="صورة 5">
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%A7%D8%BA%D8%A7%D9%86%D9%89%20%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A%D8%A9.png" alt="صورة 6">
-    </div>
+<div class="banner">
+        <h1> </h1>
+    
 </div>
+
+<div class="titles">
+        <h1>مرحبًا بكم في " دليلي ميوزيك " </h1>
+        <h2> أدوات معلم التربية الموسيقية </h2>
+        
+    </div>
+
 
 <div class="content" id="about">
     <h2>" دليلـي ميـوزيـك "</h2>
