@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>دليلي ميوزيك</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #FDF7E3;
+            color: #781f1d;
+            padding-top: 70px;
+            font-size: 1rem; /* تحديد الحجم الأساسي للخط */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #C11B17;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .image-slider {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-images {
+            display: flex;
+            animation: slide 0s infinite;
+        }
+
+
+
+
+
+        .slider-images img {
+            width: 100%;
+        }
+
+
+
+
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 100% { transform: translateX(0); }
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #4a0b0a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 1800px; /* زيادة طول المحتوى */
+        }
+
+        /* تكبير حجم الخط */
+        .content h2 {
+            font-size: 2.5em; /* تكبير حجم العناوين */
+        }
+
+        .content p {
+            font-size: 1.6em; /* تكبير حجم الفقرات */
+        }
+
+        .content h3 {
+            font-size: 1.8em; /* تكبير حجم عناوين المدير */
+        }
+
+         .content p, .content h3, .content img {
+            color: #f4fa48;
+            animation: moveText 12s ease-out forwards;
+        }
+
+.content h2, .content h3, .manager-section h3 {
+          color: #fafaf7;
+            animation: moveText 12s ease-out forwards;
+        }
+
+
+.manager-section h5 {
+          color: #f4fa48;
+            animation: moveText 12s ease-out forwards;
+font-size: 1.4em;
+        }
+.manager-section h6 {
+          color: #e1fce8;
+            animation: moveText 12s ease-out forwards;
+font-size: 1.8em;
+        }
+
+
+        /* حركة النصوص والصورة */
+        @keyframes moveText {
+            0% {
+                transform: translateY(100%); /* يبدأ من أسفل المحتوى */
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0); /* يستقر في مكانه داخل المحتوى */
+                opacity: 1;
+            }
+        }
+
+        .manager-section {
+            margin-top: 20px;
+        }
+
+        .manager-section h3 {
+            color: #f9fad9;
+            font-size: 1.9em;
+            margin-bottom: 10px;
+            animation: moveText 12s ease-out forwards; /* إضافة الحركة للنصوص في القسم */
+        }
+
+        .manager-section img {
+            width: 190px;
+            height: 190px;
+            border-radius: 70%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            animation: moveText 12s ease-out forwards; /* حركة الصورة أيضًا */
+        }
+
+        footer {
+            text-align: center;
+            background-color: #C11B17;
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<audio id="myAudio" loop>
+    <source src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/a42eb3852398a540d813aaeeb0ed4b836f5d8f27/yani.mp3" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+</audio>
+
+<script>
+    // تشغيل الصوت عند النقر في أي مكان في الصفحة
+    document.body.addEventListener('click', function(event) {
+        var audio = document.getElementById("myAudio");
+        if (!event.target.closest('.navbar')) {
+            audio.play(); // تشغيل الصوت
+        }
+    });
+
+    // إيقاف الصوت عند النقر على الناف بار أو أي رابط داخلها
+    var navbar = document.querySelector('.navbar'); // تحديد الناف بار
+    navbar.addEventListener('click', function(event) {
+        var audio = document.getElementById("myAudio");
+        audio.pause(); // إيقاف الصوت
+    });
+
+    // إيقاف الصوت مؤقتًا عند النقر على أي رابط داخل الناف بار
+    var links = navbar.querySelectorAll('a'); // تحديد الروابط داخل الناف بار
+    links.forEach(function(link) {
+        link.addEventListener('click', function() {
+            var audio = document.getElementById("myAudio");
+            audio.pause(); // إيقاف الصوت
+        });
+    });
+</script>
+
+<nav class="navbar">
+    <div class="navbar-links">
+        <a href="#about">عن التطبيق</a>
+        <a href="https://mosabka25.github.io/mosabaka25/توزيع المنهج.html">&#128220;</i> توزيع المنهج</a>
+        <a href="https://mosabka25.github.io/mosabaka25/أغانى تعليمية.html">&#127908;</i> أغانى تعليمية</a>
+        <a href="https://mosabka25.github.io/mosabaka25/المكتبة.html">📚</i> المكتبة</a>
+        <a href="https://mosabka25.github.io/dalelyinfo/call.html">📬</i> اتصل بنا</a>
+
+    </div>
+</nav>
+
+<div class="image-slider">
+    <div class="slider-images">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AA%D9%88%D8%B2%D9%8A%D8%B9%20%D8%A7%D9%84%D9%85%D9%86%D9%87%D8%AC%20%D8%AC%D8%AF%D9%8A%D8%AF.png" alt="صورة 4">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D9%873.png" alt="صورة 1">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%85%2055.png" alt="صورة 2">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/0f240522221f1768c85e914abf3aaf0db756d0cb/dalelycover2.png" alt="صورة 3">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%AF%D9%81%D8%AA%D8%B1%20%D8%A7%D9%84%D8%AA%D8%AC%D8%B6%D9%8A%D8%B155.jpg" alt="صورة 5">
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/4d797c64af2444d7609c624de4abba3cabbeb45f/%D8%A7%D8%BA%D8%A7%D9%86%D9%89%20%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A%D8%A9.png" alt="صورة 6">
+    </div>
+</div>
+
+<div class="content" id="about">
+    <h2>" دليلـي ميـوزيـك "</h2>
+    <h2>*****</h2>
+    <p>
+        "دليلي ميوزيك" 
+ هو التطبيق التعليمي الرائد الذي انبثق من رؤية مبتكرة تهدف إلى الإستفادة من تكنولوجيا برمجة وتطوير التطبيقات في إنشاء تطبيق تعليمىي مخصص لتنظيم موارد نشاط و مادة التربية الموسيقية بــ </p>
+
+
+
+    <h2>توجيه التربية الموسيقية</h2>
+    <h2>إدارة شبـــــــرا التــــعليـميـــــة</h2>
+
+    <p>صُمم التطبيق ليُسهم في  تعزيزتوفير موارد المحتوى التعليمي للزملاء الأعزاء من معلمي المادة، إذ يتيح لهم الوصول إلى أدلة المعلم لعدة صفوف، خطط توزيع المناهج، دفاتر التحضير، فيديوهات المسابقات، الأغاني التعليمية، وشرح الدروس وغيرها من المواد بطريقة مبتكرة وسهلة.</p>
+
+<p>يتميز هذا التطبيق بكونه وسيلة تعليمية فعّالة لدمج جميع هذه الموارد في مكان واحد، مما يوفر الكثير من الوقت والجهد على المعلمين في البحث والاختيار. ومن خلال هذه الأداة الرائعة، يُمكن لمعلمي التربية الموسيقية الاستفادة المثلى من كل محتوى تعليمي            متاح، مع تحقيق التكامل بين جميع جوانب المادة وأنشطتها.</p>
+
+<p>                             </p>
+
+<p> وبالتالي، 
+ يسهم التطبيق في تمكين المعلمين من تقديم دروسهم بشكل احترافي، ويُعزز من مهاراتهم في نقل المعرفة للمجتمع التعليمي بكفاءة عالية. </p>
+
+
+    <div class="manager-section">
+        <h3>تم إنجاز التطبيق بحمد الله تحت رعاية ودعم الأستاذ الفاضل</h3> 
+        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/c9a4a8281210d58a6d7ba535165e256a901c971f/Dr_farahat.jpg" alt="مدير إدارة شبرا التعليمية">
+
+<div class="manager-section">
+        <h3>د. فرحــات عبد الغني</h3>
+        <h2>مــديـر إدارة شبـــرا التعليميــــة</h2>
+<h3>*****</h3>
+
+<h5>مع تحيات</h5>
+<h5>مُصمم و مُنشيء تطبيـق</h5>
+<h2>"دليلـي ميوزيـك"</h2>
+<h6>هاني سمير سلامة</h6>
+<h5>موجه التربية الموسيقية</h5>
+<h5>بإدارة</h5>
+<h5>شبــرا التـعليميــة</h5>
+
+
+
+    </div>
+</div>
+</div>
+
+<footer>
+    <p>© 2025 دليلي ميوزيك - Dalely Music</p>
+</footer>
+
+</body>
+</html>
