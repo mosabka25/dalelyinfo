@@ -7,27 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and box-sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Set html and body to use full height and flex layout */
-        html, body {
-            height: 100%;
+        body {
             font-family: Arial, sans-serif;
             background-color: #FDF7E3;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* Navbar styling */
         .navbar {
             position: fixed;
             top: 0;
@@ -42,11 +32,6 @@
             z-index: 1000;
         }
 
-        .navbar-brand {
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-
         .navbar-links {
             display: flex;
             gap: 15px;
@@ -55,10 +40,9 @@
         .navbar-links a {
             color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9em;
         }
 
-        /* Banner styling */
         .banner {
             background-image: url('https://raw.githubusercontent.com/mosabka25/mosabaka25/327c4aad7019463731697b529095eebf103b8842/dalelycover.png');
             background-size: cover;
@@ -67,198 +51,79 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 60px; /* Adjusted to account for navbar height */
+            margin-top: 50px;
         }
 
         .banner h1 {
             font-family: 'Amiri', serif;
             color: #00796b;
-            font-size: 6vw;
+            font-size: 4vw;
             text-align: center;
-            max-width: 90%;
         }
 
-        /* Titles section */
         .titles {
             text-align: center;
-            margin: 20px 10px;
+            margin: 20px 0;
+        }
+
+        .titles h1, .titles h2 .titles h3, {
+            font-family: 'Amiri', serif;
         }
 
         .titles h1 {
-            font-family: 'Amiri', serif;
             color: #004d40;
-            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-            margin-bottom: 10px;
+            font-size: 2em;
         }
 
         .titles h2 {
-            font-family: 'Amiri', serif;
             color: #C11B17;
-            font-size: clamp(1.2rem, 2vw, 2rem);
+            font-size: 1.5em;
         }
 
-        /* Content styling */
+.titles h3 {
+            color: #C11B17;
+            font-size: 1.3em;
+        }
+
         .content {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             max-width: 800px;
-            margin: 20px auto;
+            margin: auto;
             background-color: #4a0b0a;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1 0 auto;
-        }
-
-        .content h2 {
-            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-            color: #fafaf7;
-            animation: moveText 12s ease-out forwards;
-            margin: 20px 0 10px 0;
-        }
-
-        .content p {
-            font-size: clamp(1.4rem, 1.9vw, 1.9rem);
             color: #f4fa48;
-            animation: moveText 12s ease-out forwards;
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
-        .content h3 {
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            color: #fafaf7;
-            animation: moveText 12s ease-out forwards;
-            margin: 15px 0 5px 0;
         }
 
         .content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-            animation: moveText 12s ease-out forwards;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 50%; /* يجعل الصورة دائرية */
+    margin: 20px 0;
+    border: 5px solid #C11B17; /* اختياري: لإضافة إطار للصورة */
+}
+
+        .content h2 {
+            font-size: 2.5em;
+            color: #fafaf7;
         }
 
-        /* Manager section styling */
-        .manager-section {
-            margin-top: 20px;
+        .content p {
+            font-size: 1.6em;
         }
 
-        .manager-section h3 {
-            color: #f9fad9;
-            font-size: clamp(1.4rem, 1.9vw, 1.9rem);
-            margin-bottom: 10px;
-            animation: moveText 12s ease-out forwards;
-        }
-
-        .manager-section h5 {
-            color: #f4fa48;
-            font-size: clamp(1rem, 1.4vw, 1.4rem);
-            animation: moveText 12s ease-out forwards;
-            margin: 5px 0;
-        }
-
-        .manager-section h6 {
-            color: #e1fce8;
-            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-            animation: moveText 12s ease-out forwards;
-            margin: 5px 0;
-        }
-
-        /* Footer styling */
         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             text-align: center;
             background-color: #C11B17;
             color: white;
-            padding: 15px 0;
-            flex-shrink: 0;
-            width: 100%;
-        }
-
-        /* Animation for moving text */
-        @keyframes moveText {
-            0% {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .navbar-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .banner h1 {
-                font-size: 8vw;
-            }
-
-            .titles h1 {
-                font-size: clamp(1.2rem, 3vw, 2rem);
-            }
-
-            .titles h2 {
-                font-size: clamp(1rem, 2.5vw, 1.8rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 8px 15px;
-            }
-
-            .navbar-links a {
-                font-size: 0.9rem;
-            }
-
-            .banner h1 {
-                font-size: 10vw;
-            }
-
-            .titles h1 {
-                font-size: clamp(1rem, 4vw, 1.8rem);
-            }
-
-            .titles h2 {
-                font-size: clamp(0.9rem, 3.5vw, 1.5rem);
-            }
-
-            .content {
-                padding: 15px;
-            }
-
-            .content h2 {
-                font-size: clamp(1.2rem, 3vw, 2rem);
-            }
-
-            .content p {
-                font-size: clamp(0.9rem, 1.4vw, 1.4rem);
-            }
-
-            .content h3 {
-                font-size: clamp(1rem, 2vw, 1.6rem);
-            }
-
-            .manager-section h3 {
-                font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            }
-
-            .manager-section h5 {
-                font-size: clamp(0.8rem, 1.2vw, 1.2rem);
-            }
-
-            .manager-section h6 {
-                font-size: clamp(1rem, 2vw, 1.6rem);
-            }
+            padding: 20px 0;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -295,69 +160,83 @@
     });
 </script>
 
-<nav class="navbar">
-    <div class="navbar-links">
-        <a href="https://mosabka25.github.io/dalelyinfo/index.html">⏬ تحميل التطبيق</a>
-        <a href="https://mosabka25.github.io/dalelyinfo/about.html">ℹ عن التطبيق</a>
-        <a href="https://mosabka25.github.io/dalelyinfo/Loader.html">📚 المكتبة</a>
-        <a href="https://mosabka25.github.io/dalelyinfo/call.html">📬 اتصل بنا</a>
+
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="https://mosabka25.github.io/dalelyinfo/index.html">⏬ تحميل التطبيق</a>
+            <a href="https://mosabka25.github.io/dalelyinfo/about.html">ℹ عن التطبيق</a>
+            
+            <a href="https://mosabka25.github.io/dalelyinfo/call.html">📬 اتصل بنا</a>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <h1></h1>
     </div>
-</nav>
 
-<div class="banner">
-    <h1> </h1>
-</div>
+    <div class="titles">
+        <h1>مرحبًا بكم في " دليلي ميوزيك "</h1>
+        <h2>أدوات معلم التربية الموسيقية</h2>
+    </div>
 
-<div class="titles">
-    <h1>مرحبًا بكم في "دليلي ميوزيك"</h1>
-    <h2>أدوات معلم التربية الموسيقية</h2>
-</div>
+    <div class="content">
+        <h2>" دليلـي ميـوزيـك "</h2>
+<h1>*****</h1>
+<p> </p>
+        <p>
+        "دليلي ميوزيك" 
+ هو التطبيق التعليمي الرائد الذي انبثق من رؤية مبتكرة تهدف إلى الإستفادة من تكنولوجيا برمجة وتطوير التطبيقات في إنشاء تطبيق تعليمىي مخصص لتنظيم الموارد التعليمية لمادة و نشاط التربية الموسيقية بــ </p>
 
-<div class="content" id="about">
-    <h2>"دليلـي ميـوزيـك"</h2>
-    <h2>*****</h2>
-    <p>
-        "دليلي ميوزيك" هو التطبيق التعليمي الرائد الذي انبثق من رؤية مبتكرة تهدف إلى الإستفادة من تكنولوجيا برمجة وتطوير التطبيقات في إنشاء تطبيق تعليمي مخصص لتنظيم موارد نشاط ومادة التربية الموسيقية بــ
-    </p>
+
 
     <h2>توجيه التربية الموسيقية</h2>
     <h2>إدارة شبـــــــرا التــــعليـميـــــة</h2>
+<p></p>
+        <p>*****</p>
+        <p>
+            التطبيق يُسهم في تعزيز توفير موارد المحتوى التعليمي للزملاء الأعزاء من معلمي المادة، حيث يتيح لهم الوصول إلى أدلة المعلم لعدة صفوف، خطط توزيع المناهج، 
+            دفاتر التحضير، فيديوهات المسابقات، الأغاني التعليمية، وشرح الدروس وغيرها من المواد بطريقة مبتكرة وسهلة.
+        </p>
+        <p>
+            وبالتالي، يُمكن لمعلمي التربية الموسيقية الاستفادة المثلى من كل محتوى تعليمي متاح مع تحقيق التكامل بين جميع جوانب المادة وأنشطتها.
+        </p>
+<p>*****</p>
+<p></p>
+        <h2>
+            تم إنجاز التطبيق بحمد الله تحت رعاية ودعم الأستاذ الفاضل
+        </h2>
+<img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/c9a4a8281210d58a6d7ba535165e256a901c971f/Dr_farahat.jpg" alt="مدير إدارة شبرا التعليمية">
+    
+<h2>
+             د. فرحات عبد الغني 
+        </h2>
+<h1>
+             مدير إدارة شبرا التعليمية
+        </h1>
 
-    <p>
-        صُمم التطبيق ليُسهم في تعزيز توفير موارد المحتوى التعليمي للزملاء الأعزاء من معلمي المادة، إذ يتيح لهم الوصول إلى أدلة المعلم لعدة صفوف، خطط توزيع المناهج، دفاتر التحضير، فيديوهات المسابقات، الأغاني التعليمية، وشرح الدروس وغيرها من المواد بطريقة مبتكرة وسهلة.
-    </p>
-
-    <p>
-        يتميز هذا التطبيق بكونه وسيلة تعليمية فعّالة لدمج جميع هذه الموارد في مكان واحد، مما يوفر الكثير من الوقت والجهد على المعلمين في البحث والاختيار. ومن خلال هذه الأداة الرائعة، يُمكن لمعلمي التربية الموسيقية الاستفادة المثلى من كل محتوى تعليمي متاح، مع تحقيق التكامل بين جميع جوانب المادة وأنشطتها.
-    </p>
-
-    <p>
-        وبالتالي، يسهم التطبيق في تمكين المعلمين من تقديم دروسهم بشكل احترافي، ويُعزز من مهاراتهم في نقل المعرفة للمجتمع التعليمي بكفاءة عالية.
-    </p>
-
-    <div class="manager-section">
-        <h3>تم إنجاز التطبيق بحمد الله تحت رعاية ودعم الأستاذ الفاضل</h3> 
-        <img src="https://raw.githubusercontent.com/mosabka25/dalelyinfo/c9a4a8281210d58a6d7ba535165e256a901c971f/Dr_farahat.jpg" alt="مدير إدارة شبرا التعليمية">
-
-        <div class="manager-section">
-            <h3>د. فرحــات عبد الغني</h3>
-            <h2>مــديـر إدارة شبـــرا التعليميــــة</h2>
-            <h3>*****</h3>
-
-            <h5>مع تحيات</h5>
-            <h5>مُصمم و مُنشيء تطبيـق</h5>
-            <h2>"دليلـي ميوزيـك"</h2>
-            <h6>هاني سمير سلامة</h6>
-            <h5>موجه التربية الموسيقية</h5>
-            <h5>بإدارة</h5>
-            <h5>شبــرا التـعليميــة</h5>
-        </div>
-    </div>
+<p>*****</p>
+<p> </p>
+<p>مع تحيات</p>
+<p>مُصمم و مُنشيء تطبيـق</p>
+<h2>"دليلـي ميوزيـك"</h2>
+<h2> </h2>
+<h2> </h2>
+<p> </p>
+<h1>هـاني سميـر سلامـة</h1>
+<p>موجه التربية الموسيقية</p>
+<p>بإدارة</p>
+<h2>شبــرا التـعليميــة</h2>
+<p>*****</p>
+<p>****</p>
+<p>***</p>
+<p>**</p>
+<p>*</p>
 </div>
 
-<footer>
-    <p>© 2025 دليلي ميوزيك - Dalely Music</p>
-</footer>
-
+    <footer>
+        <p>© 2025 دليلي ميوزيك - Dalely Music</p>
+    </footer>
 </body>
 </html>
+
+
